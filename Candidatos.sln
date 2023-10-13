@@ -7,11 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Candidatos", "Candidatos\Ca
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BD", "BD\BD.csproj", "{ADD3F254-574A-429A-83DC-39715ABD6559}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScriptBD", "ScriptBD", "{1DE12F70-3665-43C8-91E2-5F5F7484E920}"
-	ProjectSection(SolutionItems) = preProject
-		..\BDTestCandidatos.sql = ..\BDTestCandidatos.sql
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
