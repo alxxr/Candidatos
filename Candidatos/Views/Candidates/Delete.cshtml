@@ -1,0 +1,44 @@
+﻿@model BD.Candidates
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container">
+    <h1>Eliminar Candidato</h1>
+    <div class="row">
+        <form class="col s12" asp-action="Delete">
+            <div class="row">
+                <div class="input-field col s6">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" readonly />
+                </div>
+                <div class="input-field col s6">
+                    <label asp-for="Surname" class="control-label"></label>
+                    <input asp-for="Surname" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col s12">
+                    <label asp-for="Birthdate" class="control-label"></label>
+                    <input asp-for="Birthdate" class="form-control" readonly />
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" readonly />
+                </div>
+            </div>
+            <form asp-route-id="@Model.IdCandidate" method="post">
+                <a asp-action="Index" class="btn red">
+                    <i class="material-icons ">arrow_back</i>
+                </a>
+                <button type="submit" class="btn red">
+                    <i class="material-icons">delete</i>
+                </button>
+            </form>
+
+        </form>
+    </div>
+</div>

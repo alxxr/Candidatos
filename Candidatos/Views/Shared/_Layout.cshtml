@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Candidatos</title>
+    @*  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/materialize/css/materialize.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Candidatos.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="blue"> <!-- navbar content here  --> </nav>
+
+        <ul id="slide-out" class="sidenav sidenav-fixed">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img class="responsive-img" src="~/images/logo.png">
+                    </div>
+                    <a href="#user"><img class="circle" src="~/images/Alex 4.jpg"></a>
+
+                    <div class="contact-info">
+                        <a class="github-link" style="padding-top: 15px">
+                            <img src="/images/placa-de-identidad.png" alt="name" width="30" height="30">
+                            <span class="black-text">Alexander Rosas</span>
+                        </a>
+                        <a href="mailto:alexx47724@gmail.com" class="github-link">
+                            <img src="/images/gmail.png" alt="Gmail" width="30" height="30">
+                            <span class="black-text">alexx47724@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/alxxr" class="github-link">
+                            <img src="/images/github.png" alt="GitHub" width="30" height="30">
+                            <span class="black-text">alxxr</span>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            @*<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+            <li><a href="#!">Second Link</a></li>*@
+            <li><div class="divider"></div></li>
+          @*  <li><a class="subheader">Subheader</a></li>
+            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>*@
+        </ul>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="hide-on-large-only material-icons">menu</i></a>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="page-footer blue">
+        <div class="footer-copyright blue">
+            <div class="container">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/materialize/js/materialize.min.js"></script>
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            M.AutoInit();
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

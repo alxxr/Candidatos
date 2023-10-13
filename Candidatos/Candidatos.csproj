@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\lib\bootstrap\**" />
+    <Content Remove="wwwroot\lib\bootstrap\**" />
+    <EmbeddedResource Remove="wwwroot\lib\bootstrap\**" />
+    <None Remove="wwwroot\lib\bootstrap\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BD\BD.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\CandidateExperiences\Create.cshtml" />
+    <None Include="Views\CandidateExperiences\Delete.cshtml" />
+    <None Include="Views\CandidateExperiences\Details.cshtml" />
+    <None Include="Views\CandidateExperiences\Edit.cshtml" />
+    <None Include="Views\CandidateExperiences\Index.cshtml" />
+    <None Include="Views\Candidates\Create.cshtml" />
+    <None Include="Views\Candidates\Delete.cshtml" />
+    <None Include="Views\Candidates\Details.cshtml" />
+    <None Include="Views\Candidates\Edit.cshtml" />
+    <None Include="Views\Candidates\Index.cshtml" />
+  </ItemGroup>
+
+</Project>

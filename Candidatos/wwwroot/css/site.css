@@ -1,0 +1,55 @@
+/*html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}*/
+
+header, main, footer {
+    padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.github-link {
+    display: flex;
+    align-items: center; /* Centrar verticalmente los elementos */
+}
+.github-link img {
+    margin-right: 10px; /* Espacio a la derecha de la imagen */
+}
+
+.contact-info {
+    margin-top: 50px; /* Ajusta el valor según tus necesidades */
+}
+
+.info {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}

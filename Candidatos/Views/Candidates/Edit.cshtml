@@ -1,0 +1,65 @@
+﻿@model BD.Candidates
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <h1>Editar Candidato</h1>
+    <div class="row">
+        <form class="col s12" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdCandidate" />
+            <div class="row">
+                <div class="input-field col s6">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="input-field col s6">
+                    <label asp-for="Surname" class="control-label"></label>
+                    <input asp-for="Surname" class="form-control" />
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col s12">
+                    <label asp-for="Birthdate" class="control-label"></label>
+                    <input asp-for="Birthdate" class="form-control" />
+                    <span asp-validation-for="Birthdate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row" hidden>
+                <div class="input-field col s12">
+                    <label asp-for="InsertDate" class="control-label"></label>
+                    <input asp-for="InsertDate" class="form-control" />
+                    <span asp-validation-for="InsertDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row" hidden>
+                <div class="input-field col s12">
+                    <label asp-for="ModifyDate" class="control"></label>
+                    <input asp-for="ModifyDate" class="form-control" />
+                    <span asp-validation-for="ModifyDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <a asp-action="Index" class="btn red">
+                    <i class="material-icons ">arrow_back</i>
+                </a>
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

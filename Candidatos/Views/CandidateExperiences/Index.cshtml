@@ -1,0 +1,102 @@
+﻿@model IEnumerable<BD.CandidateExperiences>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1>Experiencias del Candidato</h1>
+
+    <div class="card">
+        <div class="card-content">
+            <div class="row right-align">
+                <!-- Este div coloca el botón "Create New" en la parte derecha superior -->
+                <a class="btn-floating waves-effect waves-light blue add_circle_outline" asp-action="Create">
+                    <i class="material-icons">add_circle_outline</i>
+                </a>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <table class="responsive-table highlight">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.IdCandidateFK.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Company)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Job)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Description)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Salary)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BeginDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EndDate)
+                                </th>
+                                @*<th>
+                                @Html.DisplayNameFor(model => model.InsertDate)
+                                </th>
+                                <th>
+                                @Html.DisplayNameFor(model => model.ModifyDate)
+                                </th>*@
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.IdCandidateFK.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Company)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Job)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Salary)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BeginDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EndDate)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" class="" asp-route-id="@item.IdCandidateExperience">
+                                            <i class="material-icons l10 blue-text" style="margin-right: 10px">edit</i>
+                                        </a>
+                                        <a asp-action="Details" class="" asp-route-id="@item.IdCandidateExperience">
+                                            <i class="material-icons green-text" style="margin-right: 10px">remove_red_eye</i>
+                                        </a>
+                                        <a asp-action="Delete" class="" asp-route-id="@item.IdCandidateExperience">
+                                            <i class="material-icons red-text">delete</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row left-align">
+                <a asp-controller="Candidates"  asp-action="Index" class="btn red">
+                    <i class="material-icons ">arrow_back</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
