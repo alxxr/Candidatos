@@ -5,7 +5,12 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Candidatos", "Candidatos\Candidatos.csproj", "{2D416BEB-C8B3-4BDB-8F02-562A5F8464AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BD", "BD\BD.csproj", "{ADD3F254-574A-429A-83DC-39715ABD6559}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BD", "BD\BD.csproj", "{ADD3F254-574A-429A-83DC-39715ABD6559}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScriptBD", "ScriptBD", "{1DE12F70-3665-43C8-91E2-5F5F7484E920}"
+	ProjectSection(SolutionItems) = preProject
+		..\BDTestCandidatos.sql = ..\BDTestCandidatos.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
