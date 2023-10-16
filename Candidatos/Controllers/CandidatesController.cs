@@ -103,7 +103,15 @@ namespace Candidatos.Controllers
             {
                 try
                 {
-                    await _candedates.Update(candidates);
+                    if (!CandidatesEmailExists(candidates.Email))
+                    {
+                        await _candedates.Update(candidates);
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "El correo electrónico ya está registrado.");
+                        return View(candidates);
+                    }
                 }
                 catch (DbUpdateConcurrencyException)
                 {
