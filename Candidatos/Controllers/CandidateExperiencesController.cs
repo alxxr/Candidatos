@@ -166,6 +166,10 @@ namespace Candidatos.Controllers
             if (candidateExperiences != null)
             {
                 await _CandidateExperiences.Delete(candidateExperiences.IdCandidateExperience);
+                int idCandidate = candidateExperiences.IdCandidate;
+
+                // Redirige a la vista Index con el IdCandidate como parámetro
+                return RedirectToAction("Index", new { id = idCandidate });
             }
             return RedirectToAction(nameof(Index));
         }
