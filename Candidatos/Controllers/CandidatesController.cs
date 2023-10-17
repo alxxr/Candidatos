@@ -97,15 +97,26 @@ namespace Candidatos.Controllers
                 return NotFound();
             }
 
-
             candidates.ModifyDate = DateTime.Now;
             if (ModelState.IsValid)
             {
                 try
                 {
-                    if (!CandidatesEmailExists(candidates.Email))
+                    await _candedates.Update(candidates);
+                }
+                catch (Exception ex)
+                {
+                    // Maneja la excepción general aquí
+                    if (ex is DbUpdateConcurrencyException)
                     {
-                        await _candedates.Update(candidates);
+                        if (!await CandidatesExists(candidates.IdCandidate))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
                     }
                     else
                     {
@@ -113,20 +124,10 @@ namespace Candidatos.Controllers
                         return View(candidates);
                     }
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!await CandidatesExists(candidates.IdCandidate))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
                 return RedirectToAction(nameof(Index));
             }
             return View(candidates);
+
         }
         #endregion
         #endregion
