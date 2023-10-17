@@ -67,7 +67,7 @@
                 </div>
             </div>
             <form asp-route-id="@Model.IdCandidateExperience" method="post">
-                <a asp-action="Index" class="btn red">
+                <a asp-action="Index" class="btn red" asp-route-id="@Model.IdCandidate">
                     <i class="material-icons ">arrow_back</i>
                 </a>
                 <button type="submit" class="btn red">

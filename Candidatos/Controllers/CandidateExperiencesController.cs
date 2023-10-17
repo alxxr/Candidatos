@@ -43,6 +43,8 @@ namespace Candidatos.Controllers
                     .Where(ce => ce.IdCandidate == id)
                     .ToListAsync();
 
+                ViewBag.IdCandidate = id;
+
                 return View(candidateExperiences);
             }
         }
@@ -61,9 +63,9 @@ namespace Candidatos.Controllers
 
         #region ESCRITURA
         #region CREATE
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create(int? id)
         {
-            ViewData["IdCandidate"] = new SelectList(await _candedates.GetAll(), "IdCandidate", "Name");
+            ViewData["IdCandidate"] = new SelectList(await _candedates.GetAll(), "IdCandidate", "Name", id);
             return View();
         }
 
@@ -82,7 +84,7 @@ namespace Candidatos.Controllers
                 return RedirectToAction("Index", new { id = idCandidate });
             }
             ViewData["IdCandidate"] = new SelectList(await _CandidateExperiences.GetAll(), "IdCandidate", "Name", candidateExperiences.IdCandidate);
-            return View(candidateExperiences);
+            return RedirectToAction("Index", new { id = candidateExperiences.IdCandidate });
         }
         #endregion 
 
